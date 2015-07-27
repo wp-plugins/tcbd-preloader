@@ -18,13 +18,12 @@ body{
 }
 .loader{
 	text-align:center;
-	width:52px;
-	height:14px;
+	width:128px;
+	height:128px;
 	position:absolute;
-	background:url(../img/loader-grey.gif);
 	left:50%;
 	top:50%;
-	margin:-21px 0 0 -7px;
+	margin:-64px 0 0 -64px;
 }
 .loader span{
 	display:none !important;

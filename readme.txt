@@ -1,21 +1,24 @@
 === TCBD Preloader ===
 Contributors: tcoder
-Tags: jQuery preloader, preloader, awesome preloader
-Requires at least: 3.0
+Tags: jQuery preloader, awesome preloader,admin, comments, css3, custom, customize, customizer, customizing, google, image, images, jquery, loader, loading, page, plugin, Post, posts, preload, preloader, responsive, retina, sidebar, twitter, widget,tcbd preloader,tcbd
+Requires at least: 2.9
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add preloader to your website easily, responsive and retina, compatible with all major browsers.
+Add preloader to your website easily, responsive and retina, compatible with all major browsers and full customize.
 
 == Description ==
 
 = Plugin Features =
 
-* Very Lightweight. Only 9KB.
+
 * Easy to use.
 * Fully Responsive.
+* Full customize.
+* Custom Background Color.
+* Custom Preloader Image.
 * Retina Ready.
 * jQuery & CSS3.
 * Compatible with Google Chrome, FireFox, Opera, Safari, IE9, IE10, IE11 and with mobile devices like iPad, iPhone, Android, etc.
@@ -36,3 +39,7 @@ Add preloader to your website easily, responsive and retina, compatible with all
 
 = 1.0 =
 * Initial release
+
+= 1.1 =
+* TCBD Preloader Menu add.
+* Custom Background Color and Custom Preloader Image add.

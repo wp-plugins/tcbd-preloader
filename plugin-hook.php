@@ -4,7 +4,7 @@ Plugin Name: TCBD Preloader
 Plugin URI: http://demos.tcoderbd.com/wordpress_plugin/tcbd-preoader
 Description: This plugin will enable preloader in your Wordpress theme.
 Author: Md Touhidul Sadeek
-Version: 1.0
+Version: 1.1
 Author URI: http://tcoderbd.com
 */
 
@@ -46,6 +46,36 @@ function tcbd_preloader_html(){
 }
 add_action('wp_footer', 'tcbd_preloader_html');
 
+// Add settings page link in before activate/deactivate links.
+function tcbd_preloader_plugin_action_links( $actions, $plugin_file ){
+	
+	static $plugin;
+
+	if ( !isset($plugin) ){
+		$plugin = plugin_basename(__FILE__);
+	}
+		
+	if ($plugin == $plugin_file) {
+		
+		if ( is_ssl() ) {
+			$settings_link = '<a href="'.admin_url( 'plugins.php?page=TCBD_preloader_settings', 'https' ).'">Settings</a>';
+		}else{
+			$settings_link = '<a href="'.admin_url( 'plugins.php?page=TCBD_preloader_settings', 'http' ).'">Settings</a>';
+		}
+		
+		$settings = array($settings_link);
+		
+		$actions = array_merge($settings, $actions);
+			
+	}
+	
+	return $actions;
+	
+}
+add_filter( 'plugin_action_links', 'tcbd_preloader_plugin_action_links', 10, 5 );
+
+// Include Settings page
+include( plugin_dir_path(__FILE__).'/settings.php' );
 
 function tcbd_preloader_scripts(){
 	// Latest jQuery WordPress
@@ -55,7 +85,39 @@ function tcbd_preloader_scripts(){
 	wp_enqueue_script('tcbd-preloader-js', TCBD_PRELOADER_PLUGIN_URL.'js/tcbd-preloader.js', array('jquery'), '1.0', true);
 
 	// TCBD Preloader CSS
-	wp_register_style('tcbd-preloader-css', TCBD_PRELOADER_PLUGIN_URL.'css/tcbd-preloader.css');
-	wp_enqueue_style('tcbd-preloader-css');
+	wp_register_style('tcbd-preloader', TCBD_PRELOADER_PLUGIN_URL.'css/tcbd-preloader.css', array(), '1.0');
+	wp_enqueue_style('tcbd-preloader');
 }
 add_action('wp_enqueue_scripts', 'tcbd_preloader_scripts');
+
+
+// Add CSS
+function tcbd_plugin_preloader_css(){
+	
+	if( get_option('tcbdpreloader_bg_color') ){
+		$background_color = get_option('tcbdpreloader_bg_color');
+	}else{
+		$background_color = '#FFFFFF';
+	}
+		
+	if( get_option('tcbdpreloader_image') ){
+		$preloader_image = get_option('tcbdpreloader_image');
+	}else{
+		$preloader_image = plugins_url( '/img/loader-grey.GIF', __FILE__ );
+	}
+		
+	?>
+    	<style type="text/css">
+			#preloader{
+				background-color:<?php echo $background_color; ?>;
+			}
+			.loader{
+				background:url(<?php echo $preloader_image; ?>);
+			}
+		</style>
+    <?php
+	
+}
+add_action('wp_head', 'tcbd_plugin_preloader_css');
+
+?>

@@ -13,7 +13,6 @@ Add preloader to your website easily, responsive and retina, compatible with all
 
 = Plugin Features =
 
-
 * Easy to use.
 * Fully Responsive.
 * Full customize.
@@ -23,6 +22,8 @@ Add preloader to your website easily, responsive and retina, compatible with all
 * jQuery & CSS3.
 * Compatible with Google Chrome, FireFox, Opera, Safari, IE9, IE10, IE11 and with mobile devices like iPad, iPhone, Android, etc.
 
+= Demo =
+* [Here is the demo](http://demos.tcoderbd.com/wordpress_plugins/)
 
 == Installation ==
 

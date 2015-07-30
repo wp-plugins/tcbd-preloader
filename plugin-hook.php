@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: TCBD Preloader
-Plugin URI: http://demos.tcoderbd.com/wordpress_plugin/tcbd-preoader
+Plugin URI: http://demos.tcoderbd.com/wordpress_plugins/
 Description: This plugin will enable preloader in your Wordpress theme.
 Author: Md Touhidul Sadeek
 Version: 1.1

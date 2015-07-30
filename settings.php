@@ -24,7 +24,7 @@
 		if( get_option('tcbdpreloader_image') ){
 			$preloader_image = get_option('tcbdpreloader_image');
 		}else{
-			$preloader_image = plugins_url( '/img/loader-grey.GIF', __FILE__ );
+			$preloader_image = plugins_url( '/img/loader-grey.gif', __FILE__ );
 		}
 		?>
 			<div class="wrap">
